@@ -1,0 +1,21 @@
+﻿<Window x:Class="ZavrsniBiblioteka.WindowIznajmljivanjePromena"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZavrsniBiblioteka"
+        mc:Ignorable="d"
+        Title="WindowIznajmljivanjePromena" Height="320" Width="370" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid Background="AliceBlue">
+        <TextBlock Text="Izaberi clana" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="10,20,0,0"  VerticalAlignment="Top"  />
+        <TextBlock Text="Izaberi knjigu" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="10,70,0,0"  VerticalAlignment="Top" />
+        <ComboBox Name="ComboBoxClan"  HorizontalAlignment="Left" Margin="170,20,0,0"  VerticalAlignment="Top" Width="176" />
+        <ComboBox Name="ComboBoxKnjiga"  HorizontalAlignment="Left" Margin="170,70,0,0"  VerticalAlignment="Top" Width="177" />
+        <TextBlock Text="Datum iznajmljivanja" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="10,120,0,0"  VerticalAlignment="Top" />
+        <TextBlock Text="Datum vracanja" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="10,170,0,0"  VerticalAlignment="Top" />
+        <DatePicker Name="DatePicker1" HorizontalAlignment="Left" Margin="170,120,0,0" VerticalAlignment="Top" Width="177"/>
+        <DatePicker Name="DatePicker2"  HorizontalAlignment="Left" Margin="170,170,0,0"  VerticalAlignment="Top" Width="177"  />
+        <Button Name="ButtonPotvrdi" Content="Potvrdi" Background="LightGreen" Foreground="Green" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="49,234,0,0"  VerticalAlignment="Top" Width="75" Click="ButtonPotvrdi_Click"/>
+        <Button Name="ButtonOdustani" Background="LightPink" Foreground="Red" FontSize="16" FontWeight="SemiBold" Content="Odustani" Margin="182,234,0,0"  Width="75" HorizontalAlignment="Left"  VerticalAlignment="Top" Click="ButtonOdustani_Click"/>
+    </Grid>
+</Window>

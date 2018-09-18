@@ -1,0 +1,23 @@
+﻿<Window x:Class="ZavrsniBiblioteka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZavrsniBiblioteka"
+        mc:Ignorable="d"
+        Title="Biblioteka" Height="400" Width="500" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Name="ButtonClan" Content="Članstvo" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="200" Height="50" Click="ButtonClan_Click"/>
+        <Button Name="ButtonKnjige" Content="Knjige" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="200" Height="50" Click="ButtonKnjige_Click"/>
+        <Button Name="ButtonIznajmljivanje" Content="Iznajmljivanje" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="200" Height="50" Click="ButtonIznajmljivanje_Click"/>
+        <Button Name="ButtonAdministracija" Content="Administracija" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="200" Height="50" Click="ButtonAdministracija_Click"/>
+    </Grid>
+</Window>

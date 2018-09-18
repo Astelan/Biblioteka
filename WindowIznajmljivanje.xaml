@@ -1,0 +1,37 @@
+﻿<Window x:Class="ZavrsniBiblioteka.WindowIznajmljivanje"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZavrsniBiblioteka"
+        mc:Ignorable="d"
+        Title="Iznajmljivanje" Height="400" Width="850" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid Background="AliceBlue">
+        <DataGrid x:Name="DataGrid1" HorizontalAlignment="Center" Margin="0,32,0,0" VerticalAlignment="Top" Height="152" Width="auto"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  IsReadOnly="True"
+                  AlternatingRowBackground="LightBlue"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserSortColumns="False"                  
+                  >
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Knjiga" Width="200" Binding="{Binding Path=NazivKnjige}"/>
+                <DataGridTextColumn Header="Ime" Width="100" Binding="{Binding Path=Ime}"/>
+                <DataGridTextColumn Header="Prezime" Width="100" Binding="{Binding Path=Prezime}"/>
+                <DataGridTextColumn Header="Cl. karta" Width="100" Binding="{Binding Path=ClanskaKArta}"/>
+                <DataGridTextColumn Header="Datum iznajmljivanja" Width="130" Binding="{Binding Path=DatumIznajmljivanja, StringFormat=dd.MM.yyyy}"/>
+                <DataGridTextColumn Header="Datum vracanja" Width="130" Binding="{Binding Path=DatumVracanja, StringFormat=dd.MM.yyyy}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ButtonUbaci" Background="LightGreen" Foreground="Green" FontSize="16" FontWeight="SemiBold" Content="Ubaci" HorizontalAlignment="Left" Margin="35,214,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="ButtonUbaci_Click"/>
+        <Button x:Name="ButtonPromeni" Background="LightYellow" Foreground="Orange" FontSize="16" FontWeight="SemiBold" Content="Promeni" HorizontalAlignment="Left" Margin="176,214,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="ButtonPromeni_Click"/>
+        <Button x:Name="ButtonObrisi" Background="LightPink" Foreground="Red" FontSize="16" FontWeight="SemiBold" Content="Obrisi" HorizontalAlignment="Left" Margin="320,214,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="ButtonObrisi_Click"/>
+        <TextBox Name="TBPretraga" HorizontalAlignment="Left" Height="23" Margin="132,301,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Name="ButtonPretraga" Content="Pretraga po članskoj karti" Background="LightSteelBlue" Foreground="Navy" FontSize="16" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="286,299,0,0" VerticalAlignment="Top" Width="200" Click="ButtonPretraga_Click"/>
+        <Button Name="ButtonResetuj" Content="Resetuj" HorizontalAlignment="Left" Margin="35,304,0,0" VerticalAlignment="Top" Width="75" Click="ButtonResetuj_Click"/>
+    </Grid>
+</Window>

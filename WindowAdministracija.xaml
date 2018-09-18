@@ -1,0 +1,96 @@
+﻿<Window x:Class="ZavrsniBiblioteka.WindowAdministracija"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZavrsniBiblioteka"
+        mc:Ignorable="d"
+        Title="Administracija" Height="450" Width="800" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Autori" Grid.Column="0" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Izdavači" Grid.Column="1" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Žanrovi" Grid.Column="2" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top"/>
+        <DataGrid Name="DataGridAutori" HorizontalAlignment="Center" Height="100" Margin="0,70,0,0" VerticalAlignment="Top" Width="auto"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  IsReadOnly="True"
+                  AlternatingRowBackground="LightBlue"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserSortColumns="False"
+                  SelectionChanged="DataGridAutori_SelectionChanged"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ime i prezime autora" Width="150" Binding="{Binding Path=ImePrezmeAutora}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="DataGridIzdavaci" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="0,70,0,0" VerticalAlignment="Top" Width="auto"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  IsReadOnly="True"
+                  AlternatingRowBackground="LightBlue"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserSortColumns="False"
+                  SelectionChanged="DataGridIzdavaci_SelectionChanged"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Width="120" Binding="{Binding Path=Naziv}"/>
+                <DataGridTextColumn Header="Adresa" Width="120" Binding="{Binding Path=Adresa}"/>
+                <DataGridTextColumn Header="Telefon" Width="120" Binding="{Binding Path=Telefon}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="DataGridZanrovi" Grid.Column="2" HorizontalAlignment="Center" Height="100" Margin="0,70,0,0" VerticalAlignment="Top" Width="auto"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  IsReadOnly="True"
+                  AlternatingRowBackground="LightBlue"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserSortColumns="False"
+                  SelectionChanged="DataGridZanrovi_SelectionChanged"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Width="120" Binding="{Binding Path=NazivZanra}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Name="TextBoxAutor" Grid.Column="0" HorizontalAlignment="Center" Height="23" Margin="0,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Column="0" Margin="0,204,0,0" TextWrapping="Wrap" Text="Ime i Prezime autora:" VerticalAlignment="Top"/>
+        
+        <TextBox Name="TextBoxNaziv" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Column="1" Margin="15,204,0,0" TextWrapping="Wrap" Text="Naziv izdavača" VerticalAlignment="Top"/>
+        <TextBox Name="TextBoxAdresa" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="141,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Column="1" Margin="150,204,0,0" TextWrapping="Wrap" Text="Adresa izdavača" VerticalAlignment="Top"/>
+        <TextBox Name="TextBoxTelefon" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Column="1" Margin="266,204,0,0" TextWrapping="Wrap" Text="Telefon izdavača" VerticalAlignment="Top"/>
+
+        <TextBox Name="TextBoxZanr" Grid.Column="2" HorizontalAlignment="Center" Height="23" Margin="0,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Column="2" Margin="0,204,0,0" TextWrapping="Wrap" Text="Naziv zanra" VerticalAlignment="Top"/>
+        <GroupBox Header="Komande Autor" Grid.Column="0" HorizontalAlignment="Center" Height="100" Margin="0,265,0,0" VerticalAlignment="Top" Width="150">
+            <Grid>
+                <Button Name="ButtonDodajtiAutor" Content="Dodaj" HorizontalAlignment="Left" Margin="29,10,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDodajtiAutor_Click"/>
+                <Button Name="ButtonPromeniAutor" Content="Promeni" HorizontalAlignment="Left" Margin="29,48,0,0" VerticalAlignment="Top" Width="75" Click="ButtonPromeniAutor_Click"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Komande Izdavac" Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="0,265,0,0" VerticalAlignment="Top" Width="150">
+            <Grid>
+                <Button Name="ButtonDodajtiIzdavac" Content="Dodaj" HorizontalAlignment="Left" Margin="29,10,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDodajtiIzdavac_Click"/>
+                <Button Name="ButtonPromeniIzdavac" Content="Promeni" HorizontalAlignment="Left" Margin="29,48,0,0" VerticalAlignment="Top" Width="75" Click="ButtonPromeniIzdavac_Click"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Komande Zanr" Grid.Column="2" HorizontalAlignment="Center" Height="100" Margin="0,265,0,0" VerticalAlignment="Top" Width="150">
+            <Grid>
+                <Button Name="ButtonDodajtiZanr" Content="Dodaj" HorizontalAlignment="Left" Margin="29,10,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDodajtiZanr_Click"/>
+                <Button Name="ButtonPromeniZanr" Content="Promeni" HorizontalAlignment="Left" Margin="29,48,0,0" VerticalAlignment="Top" Width="75" Click="ButtonPromeniZanr_Click"/>
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
